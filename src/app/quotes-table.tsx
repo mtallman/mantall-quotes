@@ -36,9 +36,9 @@ export function QuotesTable({ quotes }: QuotesTableProps) {
             <th className="border border-gray-800 px-3 py-2 text-left font-bold">Change</th>
             <th className="border border-gray-800 px-3 py-2 text-left font-bold">Change Percent</th>
             <th className="border border-gray-800 px-3 py-2 text-left font-bold">Volume</th>
+            <th className="border border-gray-800 px-3 py-2 text-left font-bold">Dividend Amount</th>
             <th className="border border-gray-800 px-3 py-2 text-left font-bold">Payments/Year</th>
             <th className="border border-gray-800 px-3 py-2 text-left font-bold">Annual Dividend</th>
-            <th className="border border-gray-800 px-3 py-2 text-left font-bold">Div Per Share</th>
             <th className="border border-gray-800 px-3 py-2 text-left font-bold">Next Dividend</th>
           </tr>
         </thead>
@@ -76,13 +76,13 @@ export function QuotesTable({ quotes }: QuotesTableProps) {
                   {formatVolume(quote.volume)}
                 </td>
                 <td className="border border-gray-800 px-3 py-2">
+                  {formatCAD(divPerShare)}
+                </td>
+                <td className="border border-gray-800 px-3 py-2">
                   {quote.dividendsPerYear}
                 </td>
                 <td className="border border-gray-800 px-3 py-2">
                   {formatCAD(annualDiv)}
-                </td>
-                <td className="border border-gray-800 px-3 py-2">
-                  {formatCAD(divPerShare)}
                 </td>
                 <td className="border border-gray-800 px-3 py-2">
                   {quote.dividendPaymentDate ?? "—"}
